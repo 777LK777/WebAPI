@@ -1,0 +1,48 @@
+﻿@page
+@using  WebApp.Models
+
+    @model WebApp.Models.MsgData
+    @{
+        ViewData["Title"] = "Home page";
+    }
+   
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+    </div>
+    <div id="send-place" >
+        <hr />
+        <form s id="SendForm" asp-action="SomeResult" asp-controller="Send" method="post">
+
+            <table style="width:100%; align-self:center">
+            <tr>
+                <td class="left-column">User Key:</td>
+                <td class="center-column"><input asp-for="UserKey" class="keys-field" required /></td>
+                <td class="right-column">&nbsp;</td>
+            </tr>
+                <tr>
+                    <td style="font-size:4px">&nbsp;</td>
+                </tr>
+            <tr>
+                <td class="left-column">API Token:</td>
+                <td class="center-column"><input asp-for="AppToken" class="keys-field" required /></td>
+                <td class="center-column">&nbsp;</td>
+            </tr>
+                <tr>
+                    <td colspan="3">
+                        <hr />
+                    </td>
+                </tr>
+            <tr valign="top">
+                <td class="left-column">Message:</td>
+                <td class="center-column">
+                    <textarea asp-for="Message" class="msg-area" maxlength="512" required></textarea>
+                </td>
+                <td class="center-column"><input type="submit" id="SendBTN" value="SEND" /></td>
+            </tr>
+            </table>
+            
+        </form>
+    </div>
+    
+
+
